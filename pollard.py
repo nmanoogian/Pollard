@@ -7,7 +7,7 @@ def pollard(n, B, a=2):
     """
     for j in range(2, B):
         print("\t{a}".format(a=a))
-        a = pow(a, j) % n
+        a = pow(a, j, n)
     d = gcd(a-1, n)
 
     if d < n and d > 1:

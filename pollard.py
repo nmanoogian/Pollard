@@ -16,6 +16,7 @@ def pollard(n, B, a=2):
         return None
 
 
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Pollard Factorization Algorithm.')
     parser.add_argument('n', type=int, help='number to test')
@@ -26,6 +27,7 @@ if __name__ == "__main__":
     n = args.n
     B = args.B
 
+    print("Pollard Original:")
     d = pollard(n, B, args.a or 2)
     if d:
         print("{d} is a factor of {n}".format(d=d, n=n))

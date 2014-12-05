@@ -29,10 +29,10 @@ if __name__ == "__main__":
     n = args.n
 
     vlist = []
-    list_length = n/8
+    list_length = n//mp.cpu_count()
     for n in range(2,n):
         vlist.append(n)
-        if len(vlist) == list_length:
+        if len(vlist) >= list_length:
             mp.Process(target=test_job, args=(vlist,)).start()
             vlist = []
     mp.Process(target=test_job, args=(vlist,)).start()

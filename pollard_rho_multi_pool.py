@@ -10,10 +10,14 @@ class Number():
         self.value = value
         self.factor = factor
 
+    def is_prime(self):
+        return self.factor == self.value
+
     def __repr__(self):
-        if self.factor == self.value:
+        if self.is_prime():
             return "{v} is prime".format(v=self.value)
-        return "{v}={f}*x".format(v=self.value, f=self.factor)
+        else:
+            return "{v}={f}*{x}".format(v=self.value, f=self.factor, x=(self.value//self.factor))
 
 def pollard_rho(n, g=lambda x, n: (x**2 + 1) % n):
     """
